@@ -15,5 +15,11 @@ pipeline {
             }
         }
 
+        stage('Approval') {
+            steps {
+                input message: 'Deploy to Production?', ok: 'Deploy'
+            }
+        }
+
     }
 }
